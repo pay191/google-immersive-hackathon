@@ -24,7 +24,7 @@
     <!-- Include Media Pipe Liabraries to help with Facial Recognition.-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.6/control_utils.css" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/face-mesh.css" crossorigin="anonymous">
-    <script type="module" src="js/face-mesh.js" crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3/camera_utils.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.6/control_utils.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3/drawing_utils.js" crossorigin="anonymous"></script>
@@ -53,11 +53,11 @@
                 </h6>
                 <ul class="nav flex-column">
                     <?php foreach($INTERESTING_PLACES as $key => $A_PLACE){ ?>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#" onclick="start_place(<?=$key; ?>);">
-                            <?=$A_PLACE['label']; ?>
-                        </a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#" onclick="start_place(<?=$key; ?>);">
+                                <?=$A_PLACE['label']; ?>
+                            </a>
+                        </li>
                     <?php }//end loop through interesting places. ?>
 
                 </ul>
@@ -69,7 +69,7 @@
                     <a id="place-button" href="#" target="_blank" class="btn btn-success w-100 mt-3" style="display: none">
                         <i class="fa-solid fa-ticket"></i> &nbsp; <span>Visit Place</span>
                     </a>
-                    <a href="#" class="btn btn-outline-dark w-100 mt-3" >
+                    <a href="https://github.com/pay191/google-immersive-hackathon" class="btn btn-outline-dark w-100 mt-3" target="_blank">
                         <i class="fa-brands fa-github"></i> &nbsp; See Code
                     </a>
                 </div>
@@ -184,14 +184,14 @@
 
     function set_look(roll, pitch, yaw){
 
-        console.log('setting look');
+        //console.log('setting look');
 
         const lookFactor = 0.05;
         let roll_ratio = Math.abs(roll) / 30;
 
 
         //viewer.camera.setView({
-            //orientation: new Cesium.HeadingPitchRoll(-roll*3.14/180, pitch*3.14/180, yaw*3.14/180)
+        //orientation: new Cesium.HeadingPitchRoll(-roll*3.14/180, pitch*3.14/180, yaw*3.14/180)
         //});
 
         //return false;
@@ -255,13 +255,8 @@
                 </div>
 
 
-
-
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+
         </div>
     </div>
 </div>
@@ -313,12 +308,6 @@
 
     }
 
-    $( document ).ready(function() {
-        
-
-    });
-
-
     document.onkeydown = checkKey;
 
     function checkKey(e) {
@@ -338,5 +327,5 @@
 
 </script>
 
-
+<script src="js/face-mesh.js" ></script>
 </body>
